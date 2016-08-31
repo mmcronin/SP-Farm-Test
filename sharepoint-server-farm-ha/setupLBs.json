@@ -67,12 +67,6 @@
     },
     "sqllbFEConfigID" : {
       "type" : "string"
-    },
-    "sqllbProbeID" : {
-      "type" : "string"
-    },
-    "SQLAOProbe" : {
-      "type" : "string"
     }
   },
   "resources": [
