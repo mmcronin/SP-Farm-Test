@@ -343,6 +343,7 @@
       "spDiskSize": 128,
       "spwebVMName": "sps-web-",
       "sqlDiskSize": 1000,
+      "sqlVMName": "sql",
       "vmContainerName": "vhds",
       "windowsDiskSize": 128,
       "windowsImageOffer": "WindowsServer",
