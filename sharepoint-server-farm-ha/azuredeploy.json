@@ -35,7 +35,7 @@
         "description": "Base URL for Marketplace",
         "artifactsBaseUrl": ""
       },
-      "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-server-farm-ha"
+      "defaultValue": "https://raw.githubusercontent.com/mmcronin/SP-Farm-Test/master/sharepoint-server-farm-ha/"
     },
     "dnsPrefix": {
       "defaultValue": "cwspf",
@@ -222,8 +222,8 @@
   "variables": {
     "administrationContentDatabaseName": "SP_AdminContent",
     "adPDCNicName": "[concat(variables('vmSettings').adPDCVMName,'-nic')]",
-    "assetLocation": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-server-farm-ha/dscv2",
-     "configDatabaseName": "SP_Config",
+    "assetLocation": "https://raw.githubusercontent.com/mmcronin/SP-Farm-Test/master/sharepoint-server-farm-ha/dscv2",
+    "configDatabaseName": "SP_Config",
     "configuration": {
       "adPDCConfigurationFunction": "CreateADPDC.ps1\\CreateADPDC",
       "adPDCModulesURL": "[concat(variables('assetLocation'),'/CreateADPDC.ps1.zip')]",
