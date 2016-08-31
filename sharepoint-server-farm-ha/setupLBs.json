@@ -67,13 +67,6 @@
     },
     "sqllbFEConfigID" : {
       "type" : "string"
-    },
-    "sqllbProbeID" : {
-      "type" : "string"
-    },
-    "SQLAOProbe" : {
-      "type" : "string"
-    }
   },
   "resources": [
     {
@@ -190,34 +183,6 @@
 				"backendAddressPools": [
 					{
 						"name": "[parameters('sqlLBBE')]"
-					}
-				],
-				"loadBalancingRules": [
-					{
-						"name": "SQLAlwaysOnEndPointListener",
-						"properties": {
-						"frontendIPConfiguration": {
-							"id": "[parameters('sqllbFEConfigID')]"
-						},
-						"probe": {
-							"id": "[parameters('sqllbProbeID')]"
-						},
-						"protocol": "tcp",
-						"frontendPort": 1433,
-						"backendPort": 1433,
-						"enableFloatingIP": true
-						}
-					}
-				],
-				"probes": [
-					{
-						"name": "[parameters('SQLAOProbe')]",
-						"properties": {
-							"protocol": "tcp",
-							"port": 59999,
-							"intervalInSeconds": "5",
-							"numberOfProbes": "2"
-						}
 					}
 				]
 			}
