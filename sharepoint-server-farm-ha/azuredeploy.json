@@ -49,7 +49,7 @@
       "metadata": {
         "description": "The FQDN of the AD Domain created "
       },
-      "defaultValue": "sphafarm.test"
+      "defaultValue": "spfarm.test"
     },
     "location": {
       "defaultValue": "North Europe",
