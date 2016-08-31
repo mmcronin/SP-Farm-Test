@@ -603,9 +603,6 @@
             "sqlLBName": {
               "value": "[variables('lbSettings').sqlLBName]"
             },
-            "sqllbProbeID": {
-              "value": "[variables('derivedIds').sqllbProbeID]"
-            },
             "staticSubnetRef": {
               "value": "[variables('staticSubnetRef')]"
             }
