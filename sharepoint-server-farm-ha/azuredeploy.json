@@ -818,35 +818,35 @@
           "location": {
             "value": "[parameters('location')]"
           },
-          "sqlAvailabilitySetName": {
-            "value": "[variables('configuration').sqlAvailabilitySetName]"
+          "availabilitySet": {
+            "value": "[reference('CreatingAvailabilitySets').outputs.adAvailabilitySetName.value]"
           },
-          "sqlDataDisk": {
-            "value": "[variables('sqlDataDisk')]"
-          },
-          "sqlLogDisk": {
-            "value": "[variables('sqlLogDisk')]"
-          },
-          "sqlNicName": {
-            "value": "[variables('sqlNicName')]"
-          },
-          "sqlPreparationFunction": {
-            "value": "[variables('configuration').sqlPreparationFunction]"
-          },
-          "sqlPrepareModulesURL": {
-            "value": "[variables('configuration').sqlPrepareModulesURL]"
-          },
-          "sqlVMName": {
-            "value": "[variables('sqlVMName')]"
-          },
-          "sqlVMSize": {
-            "value": "[parameters('sqlVMSize')]"
-          },
-          "storageAccountNamePrefix": {
-            "value": "[parameters('storageAccountNamePrefix')]"
+            "sqlDataDisk": {
+              "value": "[variables('sqlDataDisk')]"
+            },
+            "sqlLogDisk": {
+              "value": "[variables('sqlLogDisk')]"
+            },
+            "sqlNicName": {
+              "value": "[variables('sqlNicName')]"
+            },
+            "sqlPreparationFunction": {
+              "value": "[variables('configuration').sqlPreparationFunction]"
+            },
+            "sqlPrepareModulesURL": {
+              "value": "[variables('configuration').sqlPrepareModulesURL]"
+            },
+            "sqlVMName": {
+              "value": "[variables('sqlVMName')]"
+            },
+            "sqlVMSize": {
+              "value": "[parameters('sqlVMSize')]"
+            },
+            "storageAccountNamePrefix": {
+              "value": "[parameters('storageAccountNamePrefix')]"
+            }
           }
         }
-      }
     }
   ],
   "outputs": {
