@@ -1,6 +1,6 @@
 {
-   "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-   "contentVersion":"1.0.0.0",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
   "parameters": {
     "adminPassword": {
       "type": "securestring",
@@ -786,77 +786,77 @@
             ]
           }
         }
-      },
-      {
-        "name": "ProvisioningSQLServerVM",
-        "type": "Microsoft.Resources/deployments",
-        "apiVersion": "2015-01-01",
-        "dependsOn": [
-          "Microsoft.Resources/deployments/SettingUpStorageAccount",
-          "Microsoft.Resources/deployments/CreatingNetworkInterfaces",
-          "Microsoft.Resources/deployments/CreatingAvailabilitySets",
-          "Microsoft.Resources/deployments/SettingUpLoadBalancers"
-        ],
-        "properties": {
-          "mode": "Incremental",
-          "templateLink": {
-            "contentVersion": "1.0.0.0",
-            "uri": "[variables('configuration').ProvisioningSQLUrl]"
+      }
+    },
+    {
+      "name": "ProvisioningSQLServerVM",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "Microsoft.Resources/deployments/SettingUpStorageAccount",
+        "Microsoft.Resources/deployments/CreatingNetworkInterfaces",
+        "Microsoft.Resources/deployments/CreatingAvailabilitySets",
+        "Microsoft.Resources/deployments/SettingUpLoadBalancers"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "contentVersion": "1.0.0.0",
+          "uri": "[variables('configuration').ProvisioningSQLUrl]"
+        },
+        "parameters": {
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
           },
-          "parameters": {
-            "adminPassword": {
-              "value": "[parameters('adminPassword')]"
-            },
-            "adminUsername": {
-              "value": "[parameters('adminUsername')]"
-            },
-            "DNSServerAddress": {
-              "value": "[parameters('adPDCNicIPAddress')]"
-            },
-            "location": {
-              "value": "[parameters('location')]"
-            },
-            "sqlAvailabilitySetName": {
-              "value": "[variables('configuration').sqlAvailabilitySetName]"
-            },
-            "sqlDataDisk": {
-              "value": "[variables('sqlDataDisk')]"
-            },
-            "sqlLogDisk": {
-              "value": "[variables('sqlLogDisk')]"
-            },
-            "sqlNicName": {
-              "value": "[variables('sqlNicName')]"
-            },
-            "sqlPreparationFunction": {
-              "value": "[variables('configuration').sqlPreparationFunction]"
-            },
-            "sqlPrepareModulesURL": {
-              "value": "[variables('configuration').sqlPrepareModulesURL]"
-            },
-            "sqlVMName": {
-              "value": "[variables('sqlVMName')]"
-            },
-            "sqlVMSize": {
-              "value": "[parameters('sqlVMSize')]"
-            },
-            "storageAccountNamePrefix": {
-              "value": "[parameters('storageAccountNamePrefix')]"
-            }
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "DNSServerAddress": {
+            "value": "[parameters('adPDCNicIPAddress')]"
+          },
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "sqlAvailabilitySetName": {
+            "value": "[variables('configuration').sqlAvailabilitySetName]"
+          },
+          "sqlDataDisk": {
+            "value": "[variables('sqlDataDisk')]"
+          },
+          "sqlLogDisk": {
+            "value": "[variables('sqlLogDisk')]"
+          },
+          "sqlNicName": {
+            "value": "[variables('sqlNicName')]"
+          },
+          "sqlPreparationFunction": {
+            "value": "[variables('configuration').sqlPreparationFunction]"
+          },
+          "sqlPrepareModulesURL": {
+            "value": "[variables('configuration').sqlPrepareModulesURL]"
+          },
+          "sqlVMName": {
+            "value": "[variables('sqlVMName')]"
+          },
+          "sqlVMSize": {
+            "value": "[parameters('sqlVMSize')]"
+          },
+          "storageAccountNamePrefix": {
+            "value": "[parameters('storageAccountNamePrefix')]"
           }
         }
-      },
-      "type": "Microsoft.Resources/deployments"
+      }
     }
   ],
-   "outputs": {
-     "fqdn": {
-       "value": "[reference('SettingUpSharepointWebPublicIP').outputs.fqdn.value]",
-       "type": "string"
-     },
-     "cafqdn":{
-        "value":"[reference('SettingUpSharepointCentralAdminPublicIP').outputs.fqdn.value]",
-        "type": "string"
-     }
-   }
-}
+    "outputs": {
+        "fqdn": {
+          "value": "[reference('SettingUpSharepointWebPublicIP').outputs.fqdn.value]",
+          "type": "string"
+        },
+        "cafqdn": {
+          "value": "[reference('SettingUpSharepointCentralAdminPublicIP').outputs.fqdn.value]",
+          "type": "string"
+        }
+      }
+  }
+
