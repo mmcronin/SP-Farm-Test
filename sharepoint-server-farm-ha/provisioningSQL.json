@@ -59,7 +59,7 @@
           "id": "[parameters('availabilitySet')]"
         },
         "osProfile": {
-          "computername": "[parameters('sqlVMName')]",
+          "computerName": "[parameters('sqlVMName')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
