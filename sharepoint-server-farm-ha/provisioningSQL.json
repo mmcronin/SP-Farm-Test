@@ -20,6 +20,9 @@
     "adminPassword": {
       "type": "securestring"
     },
+    "availabilitySet": {
+      "type": "string"
+    },
     "storageAccountNamePrefix": {
       "type": "string"
     },
@@ -53,7 +56,7 @@
           "vmSize": "[parameters('sqlVMSize')]"
         },
         "availabilitySet": {
-          "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('sqlAvailabilitySetName'))]"
+          "id": "[parameters('availabilitySet')]"
         },
         "osProfile": {
           "computername": "[parameters('sqlVMName')]",
